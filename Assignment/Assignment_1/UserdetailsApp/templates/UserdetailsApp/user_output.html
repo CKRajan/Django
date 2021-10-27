@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Output</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>Please provide your name:</h1>
+      <form method="GET">
+        <div>
+          <input type="text" id="username" name="username" placeholder="Enter your name"><br><br>
+          {% csrf_token %}
+          <input type="submit" class='btn btn-primary' value="Submit">
+        </div>
+      </form>
+    </div>
+<div>
+ <ul>
+     {% for i in output %}
+     <li>Name : {{ i.username }}</li>
+       <li>Email ID : {{ i.email }}</li>
+       <li>Phone Number : {{ i.phone }}</li>
+       <li>Age : {{ i.age }}</li>
+       <li>Date of Birth : {{ i.dob }}</li>
+      {% endfor %}
+</ul>
+        
+</div>
+  </body>
+</html>
