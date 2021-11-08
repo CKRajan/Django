@@ -1,0 +1,35 @@
+<form method='GET' action="{% url 'collegeinfo:search_student' %}">
+  <div>
+    <label for="Student">Search Student:</label>
+    <select id="stud" name="stud">
+    <option >Rajan</option>
+    <option >Hari</option>
+    <option >Aravind</option>
+    <option >Ashok</option>
+    <option >Venkat</option>
+    <option >sriram</option>
+    <option >Jai</option>
+    <option >Srini</option>
+    <option >ravi</option>
+    <option >sridhar</option>
+    </select>
+    {% csrf_token %}
+   <br><br> <input type="submit" class='btn btn-primary' value="Submit">
+  </div>
+  </form>
+  <div>
+    Student Details:
+    <ul>
+        {% for i in stud_details %}
+        <li>Student Name : {{ i.studname }}</li>
+          <li>Roll No : {{ i.roll_no }}</li>
+          <li>Email ID : {{ i.email }}</li>
+         {% endfor %}
+   </ul>         
+   </div>
+    <div>
+      Department :
+      {% for i in department %}
+        {{ i.dept }}
+        {% endfor %}     
+  </div>

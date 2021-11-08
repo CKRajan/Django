@@ -1,0 +1,32 @@
+<form method='GET' action="{% url 'collegeinfo:search_faculty' %}">
+    <div>
+      <label for="Lecturer">Search Lecturer:</label>
+      <select id="lect" name="lect">
+      <option >Rajkumar</option>
+      <option >Ashwin</option>
+      <option >Paari</option>
+      <option >Prasanna</option>
+      <option >Mani</option>
+      <option >Mishra</option>
+      <option >Vijay</option>
+      <option >Raghu</option>
+      <option >Sampath</option>
+      <option >Madhav</option>
+      </select>
+      
+      {% csrf_token %}
+      <br><br><input type="submit" class='btn btn-primary' value="Submit">
+    </div>
+    </form>
+    <div>
+      Lecturer Name: {{ lecturer }}
+     </div><br>
+      <div>
+        Department :
+        <ul>
+            {% for i in department %}
+            <li>{{ i }}</li>
+             {% endfor %}
+       </ul>          
+    </div>
+         
